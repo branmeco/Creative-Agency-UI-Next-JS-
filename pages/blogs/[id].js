@@ -10,6 +10,11 @@ const SinglePost = () => {
   const { id } = router.query
   const post = blogdata.find((post) => post.id === parseInt(id))
 
+  // Verifica si post es undefined
+  if (!post) {
+    return <div>Post not found.</div>;
+  }
+
   return (
     <>
       <Head>
